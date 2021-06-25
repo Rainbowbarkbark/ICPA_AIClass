@@ -10,3 +10,5 @@ https://youtu.be/OI3fZJHQF8Y?list=PLU9-uwewPMe2-vtJAgWB6SNhHcTjJDgEO
 https://youtu.be/EwBoKEG5GzE?list=PLU9-uwewPMe2-vtJAgWB6SNhHcTjJDgEO
 
 https://nomadcoders.co/javascript-for-beginners-2
+
+Result : https://chemi-dictionary.kro.kr/
