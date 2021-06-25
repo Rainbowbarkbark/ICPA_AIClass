@@ -21,6 +21,7 @@
 		</div>
 		<div class="file-upload-content">
 			<img class="file-upload-image" id="elements-image" src="#" alt="your image" />
+			<p class="result-messege"></p>
 			<div id="label-container"></div>
 			<div class="image-title-wrap">
 				<button type="button" onclick="removeUpload()" class="remove-image">
@@ -45,8 +46,8 @@
 				};
 
 				reader.readAsDataURL(input.files[0]);
-				init().then(()=>{
-								predict();
+				init().then(() => {
+					predict();
 				});
 			} else {
 				removeUpload();
@@ -95,6 +96,74 @@
 			// predict can take in an image, video or canvas html element
 			var image = document.getElementById('elements-image')
 			const prediction = await model.predict(image, false);
+			pridiction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+			console.log(prediction[0].className)
+			var resultMessege;
+			switch (prediction[0].className) {
+				case "Hydrogen":
+					resultMessege = "수소"
+					break;
+				case "Helium":
+					resultMessege = "헬륨"
+					break;
+				case "Lithium":
+					resultMessege = "리튬"
+					break;
+				case "Beryllium":
+					resultMessege = "베릴륨"
+					break;
+				case "Boron":
+					resultMessege = "붕소"
+					break;
+				case "Carbon":
+					resultMessege = "탄소"
+					break;
+				case "Nitrogen":
+					resultMessege = "질소"
+					break;
+				case "Oxygen":
+					resultMessege = "산소"
+					break;
+				case "Fluorine":
+					resultMessege = "플루오린(불소)"
+					break;
+				case "Neon":
+					resultMessege = "네온"
+					break;
+				case "Natrium(Sodium)":
+					resultMessege = "나트륨(소듐)"
+					break;
+				case "Magnesium":
+					resultMessege = "마그네슘"
+					break;
+				case "Aluminium":
+					resultMessege = "알루미늄"
+					break;
+				case "Silicon":
+					resultMessege = "규소(실리콘)"
+					break;
+				case "Phosphorus":
+					resultMessege = "인"
+					break;
+				case "Sulfur":
+					resultMessege = "황"
+					break;
+				case "Chlorine":
+					resultMessege = "염소"
+					break;
+				case "Argon":
+					resultMessege = "아르곤"
+					break;
+				case "Kalium(Potassium)":
+					resultMessege = "칼륨"
+					break;
+				case "Calcium":
+					resultMessege = "칼슘"
+					break;
+				default:
+					resultMessege = "알수없음"
+			}
+			$('.result-messege').html(resultMessege)
 			for (let i = 0; i < maxPredictions; i++) {
 				const classPrediction =
 					prediction[i].className + ": " + prediction[i].probability.toFixed(2);
