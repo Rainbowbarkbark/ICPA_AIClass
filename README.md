@@ -5,5 +5,7 @@ Teachable Machine Model : https://teachablemachine.withgoogle.com/models/3ZwV-3F
 
 Referrence :
 https://youtu.be/OI3fZJHQF8Y?list=PLU9-uwewPMe2-vtJAgWB6SNhHcTjJDgEO
+
 https://youtu.be/EwBoKEG5GzE?list=PLU9-uwewPMe2-vtJAgWB6SNhHcTjJDgEO
+
 https://nomadcoders.co/javascript-for-beginners-2
